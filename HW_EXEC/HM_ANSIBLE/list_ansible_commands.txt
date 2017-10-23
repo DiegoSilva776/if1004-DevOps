@@ -1,0 +1,21 @@
+/**
+ * List of Ansible tips & commands
+ */
+
+// Create a container and customize it as you want
+// ..
+
+// Create an image from the custom container with docker
+docker container commit container_id diegosilva776/myapp:1.0
+
+// Deploy Docker image into container hosted by Heroku
+heroku container:login
+git clone https://github.com/heroku/alpinehelloworld.git
+heroku create
+heroku container push web
+ls
+cd alpinehelloworld/
+ls
+heroku container:push web
+heroku container:push -a glacial-springs-38792  web
+heroku open -a glacial-sprints-38792
