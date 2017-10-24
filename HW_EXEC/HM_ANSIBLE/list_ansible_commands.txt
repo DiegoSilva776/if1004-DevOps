@@ -16,7 +16,6 @@
 heroku container:login
 git clone https://github.com/heroku/alpinehelloworld.git // Actually, the only thing you need here is a folder that contains a Dockerfile within
 heroku create app_name
-heroku container push web
 cd folder_with_docker_file/
 heroku container:push -a app_name web                   // The command won't work if you're not inside the folder that has the Docker file
 heroku open -a app_name
