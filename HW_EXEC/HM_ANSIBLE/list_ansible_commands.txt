@@ -1,22 +1,23 @@
 /**
- * List of Ansible tips & commands
+ * Creating a playbook of servers and managing it with Ansible, tips & commands
  */
 
 // Create a container and customize it as you want
 // ..
 
-// Create an image from the custom container with docker
+// Create an image from the custom container with Docker commit
 docker container commit container_id user_name/myapp:1.0
 
-// Deploy Docker image into container hosted by Heroku
+// Create a Heroku account at, https://www.heroku.com/
+
+// Install the Heroku cli tools, https://devcenter.heroku.com/articles/heroku-cli
+
+// Deploy a Docker image into a container hosted by Heroku
 heroku container:login
-git clone https://github.com/heroku/alpinehelloworld.git // Actually, the only thing you need here is a Dockerfile
+git clone https://github.com/heroku/alpinehelloworld.git // Actually, the only thing you need here is a folder that contains a Dockerfile within
 heroku create app_name
 heroku container push web
-ls
-cd alpinehelloworld/
-ls
-heroku container:push web
-heroku container:push -a app_name  web
+cd folder_with_docker_file/
+heroku container:push -a app_name web                   // The command won't work if you're not inside the folder that has the Docker file
 heroku open -a app_name
 
