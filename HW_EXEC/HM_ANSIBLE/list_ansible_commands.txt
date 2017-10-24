@@ -6,16 +6,17 @@
 // ..
 
 // Create an image from the custom container with docker
-docker container commit container_id diegosilva776/myapp:1.0
+docker container commit container_id user_name/myapp:1.0
 
 // Deploy Docker image into container hosted by Heroku
 heroku container:login
-git clone https://github.com/heroku/alpinehelloworld.git
-heroku create
+git clone https://github.com/heroku/alpinehelloworld.git // Actually, the only thing you need here is a Dockerfile
+heroku create app_name
 heroku container push web
 ls
 cd alpinehelloworld/
 ls
 heroku container:push web
-heroku container:push -a glacial-springs-38792  web
-heroku open -a glacial-sprints-38792
+heroku container:push -a app_name  web
+heroku open -a app_name
+
