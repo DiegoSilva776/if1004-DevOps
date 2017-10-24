@@ -6,7 +6,7 @@
 // ..
 
 // Create an image from the custom container with Docker commit
-docker container commit container_id user_name/myapp:1.0
+// docker container commit container_id user_name/myapp:1.0
 
 // Create a Heroku account at, https://www.heroku.com/
 
